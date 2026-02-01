@@ -10,6 +10,18 @@
 //
 // Use only what you learned! No loops yet, so you'll have to use recursion!
 
+fn factorial(value:u32) -> u32 {
+    return recurse(value, 1)
+}
+fn recurse(value:u32, acc:u32) -> u32 {
+    if value == 0 {
+        return acc;
+    }
+    let new_acc:u32 = acc * (value);
+    let new_value:u32 = value - 1;
+    recurse(new_value, new_acc)
+}
+
 #[cfg(test)]
 mod tests {
     use crate::factorial;
